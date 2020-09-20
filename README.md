@@ -24,26 +24,27 @@ options
 	replace			- replace outfile if neccesary
 	long 			- assume data is in long format. Only needed if forms has repeat groups
 	wide            - assume data is in wide format. Only needed if forms has repeat groups
-	osp
-	refusal
-	dontknow
-	consent
-	id
-	incomplete
-	surveystart
-	multiplier
-	softmin
-	softmax
-	r1
-	r2
-	label
-	enumid
-	teamid
-	bcid
-	bcteamid
-	backcheck
-	survey
-	media
+	survey 			- path and name of Survey Dataset
+	media 			- path of media directory
+	osp 			- Missing value for others (default is -666)
+	refusal			- Missing value for refusal (default is -888)
+	dontknow		- Missing value for don't know (default is -999)
+	consent			- consent variable and value
+	id 				- Survey ID
+	enumid  		- Enumerator ID
+	teamid 			- Enumerator Team ID
+	incomplete 		- Incomplete variable and value
+	surveystart		- Survey Start date (MM/DD/YYYY)
+	label 			- Label language (Specify if multiple languages exist in XLS form)
+	multiplier 		- Multiplier for outliers
+	softmin 		- Soft minimum constraint (default is 10, i.e., 10% increased value from hard min)
+	softmax			- Soft maximum constraint (default is 10, i.e., 10% decreased value from hard max)
+	r1 				- Research oneway variables
+	r2 				- Research twoway variables	
+	bcid 			- Back Checker ID
+	bcteamid 		- Back Checker team ID
+	backcheck 		- Back Check SurveyCTO XLS form
+	
 
 ```
 
