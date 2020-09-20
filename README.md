@@ -16,37 +16,43 @@ net install ipachecksetup, all replace ///
 ## Syntax
 ```stata
 ipachecksetup using filename, template(string) outfile(string) [replace long wide]
-
-options
-	using           - SurveyCTO XLS form
-	template     	- template file for HFC inputs
-	outfile 		- save prefilled inputs file as
-	replace			- replace outfile if neccesary
-	long 			- assume data is in long format. Only needed if forms has repeat groups
-	wide            - assume data is in wide format. Only needed if forms has repeat groups
-	survey 			- path and name of Survey Dataset
-	media 			- path of media directory
-	osp 			- Missing value for others (default is -666)
-	refusal			- Missing value for refusal (default is -888)
-	dontknow		- Missing value for don't know (default is -999)
-	consent			- consent variable and value
-	id 				- Survey ID
-	enumid  		- Enumerator ID
-	teamid 			- Enumerator Team ID
-	incomplete 		- Incomplete variable and value
-	surveystart		- Survey Start date (MM/DD/YYYY)
-	label 			- Label language (Specify if multiple languages exist in XLS form)
-	multiplier 		- Multiplier for outliers
-	softmin 		- Soft minimum constraint (default is 10, i.e., 10% increased value from hard min)
-	softmax			- Soft maximum constraint (default is 10, i.e., 10% decreased value from hard max)
-	r1 				- Research oneway variables
-	r2 				- Research twoway variables	
-	bcid 			- Back Checker ID
-	bcteamid 		- Back Checker team ID
-	backcheck 		- Back Check SurveyCTO XLS form
-	
-
 ```
+
+
+
+## Options
+| Options      | Description |
+| ---        |    ----   |
+| template      |  Template file for HFC inputs |
+| outfile  |  Save prefilled inputs file as |
+| outfile  |  Save prefilled inputs file as | 
+ | replace |  Replace outfile if neccesary | 
+ | long  |  Assume data is in long format. Only needed if forms has repeat groups | 
+ | wide  |  Assume data is in wide format. Only needed if forms has repeat groups |  
+ | survey  |  Path and name of Survey Dataset | 
+ | media  |  Path of media directory | 
+ | osp  |  Missing value for others (default is -666) | 
+ | refusal |  Missing value for refusal (default is -888) | 
+ | dontknow | Missing value for don't know (default is -999) | 
+ | consent |  consent variable and value | 
+ | id  |  Survey ID | 
+ | enumid   |  Enumerator ID | 
+ | teamid  |  Enumerator Team ID | 
+ | incomplete  |  Incomplete variable and value | 
+ | surveystart |  Survey Start date (MM/DD/YYYY) | 
+ | label  |  Label language (Specify if multiple languages exist in XLS form) | 
+ | multiplier  |  Multiplier for outliers | 
+ | softmin  |  Soft minimum constraint (default is 10, i.e., 10% increased value from hard min) | 
+ | softmax |  Soft maximum constraint (default is 10, i.e., 10% decreased value from hard max) | 
+ | r1  |  Research oneway variables | 
+ | r2  |  Research twoway variables | 
+ | bcid  |  Back Checker ID | 
+ | bcteamid  |  Back Checker team ID | 
+ | backcheck  |  Back Check SurveyCTO XLS form | 
+
+
+
+
 
 ## Example Syntax
 ```stata
