@@ -15,7 +15,7 @@ net install ipachecksetup, all replace ///
 
 ## Syntax
 ```stata
-ipachecksetup using filename, template(string) outfile(string) [replace long wide]
+ipachecksetup using filename, template(string) outfile(string) [replace long wide consent() id() incomplete() surveystart()	multiplier() r1() r2() backcheck() label() enumid() teamid() bcid() bcteamid() survey() media() softmin() softmax()]
 ```
 
 
@@ -25,7 +25,6 @@ ipachecksetup using filename, template(string) outfile(string) [replace long wid
 | ---        |    ----   |
 | template      |  Template file for HFC inputs |
 | outfile  |  Save prefilled inputs file as |
-| outfile  |  Save prefilled inputs file as | 
  | replace |  Replace outfile if neccesary | 
  | long  |  Assume data is in long format. Only needed if forms has repeat groups | 
  | wide  |  Assume data is in wide format. Only needed if forms has repeat groups |  
