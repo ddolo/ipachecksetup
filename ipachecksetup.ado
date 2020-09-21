@@ -102,11 +102,6 @@ program define  ipachecksetup
 			exit 198
 		}
 
-		* check that both r1 and r1 with options are not specified
-		if "`long'" ~= "" & "`wide'" ~= "" {
-			disp as err "options long and wide are mutually exclusive"
-			exit 198
-		}
 		
 		* Mark beginning and end of groups and repeats
 		count if regexm(type, "group|repeat")
@@ -704,6 +699,24 @@ program define  ipachecksetup
 			replace vartype="cat" if regex(type, "select_")==1 
 			export excel name `label' vartype if regex(newname, "^(`r1')$")==1  using "`outfile'", 							///
 			sheet("research oneway") sheetmodify cell(A2)
+			noi disp "... research oneway complete"
+		}
+
+		if "`r1'"=="" {
+			use `_survey', clear
+			drop if appearance == "label"
+			keep if type == "integer" | type == "decimal" | regexm(type, "select_one") 
+			if `=_N' > 0 {
+				
+				gen category = cond(type == "integer" | type == "decimal", "cont", cond(regexm(type, "yesno")|regexm(type, "yn"), "bin", "cat"))
+
+				*Common things you don't want in the research tab
+				drop if regexm(type, "name") | regexm(type, "id") | regexm(type, "team")
+
+				export excel name `label' category  using "`outfile'", 							///
+				sheet("research oneway") sheetmodify cell(A2)
+
+			}
 			noi disp "... research oneway complete"
 		}
 
